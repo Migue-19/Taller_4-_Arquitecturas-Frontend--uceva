@@ -1,0 +1,49 @@
+---
+import Badge from "@components/shared/Badge.astro";
+import { USERS } from "@data/Users";
+import type { BadgeType } from "@interfaces/Badge";
+import type { User, UserEngineering } from "@interfaces/Users";
+import MainLayout from "@layouts/MainLayout.astro";
+
+const users: User[] = USERS
+
+const engineeringMap: Record<UserEngineering, BadgeType> = {
+    'Sistemas' : 'success',
+    'Electronica': 'primary',
+    'Biomedica': 'warning',
+    'Industrial': 'danger',
+    'Ambiental': 'secondary'
+}
+
+---
+<MainLayout>
+  <table class="table table-striped border">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Email</th>
+        <th scope="col">Ingenieria</th>
+      </tr>
+    </thead>
+    <tbody>
+      {users.map((user) => (
+        <tr>
+          <th scope="row">{user.id}</th>
+          <td>{user.name}</td>
+          <td>{user.lastName}</td>
+          <td>{user.age}</td>
+          <td>{user.email}</td>
+          <td>
+            <Badge
+              text={user.engineering}
+              type={engineeringMap[user.engineering]}
+            />
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</MainLayout>

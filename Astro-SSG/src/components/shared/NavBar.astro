@@ -1,0 +1,34 @@
+---
+import type { NavbarConfig } from "@interfaces/NavBar";
+import Icon  from "@components/shared/Icon.astro";
+import NavLink  from "@components/shared/NavLink.astro";
+
+
+const navbarConfig: NavbarConfig = {
+    title: 'Astro App',
+    iconConfig: {
+      icon: 'bootstrap',
+      size: 2
+    },
+    navLinks: [
+      { text: 'Usuarios', url: '/users' },
+      { text: 'Productos', url: '/products' },
+      { text: 'Fecha', url: '/current-date' },
+    ]
+};
+
+---
+
+
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+    <div class="d-flex align-items-center me-md-auto text-dark text-decoration-none" >
+        <h3>
+            <Icon icon={navbarConfig.iconConfig.icon} size={navbarConfig.iconConfig.size} />
+            { navbarConfig.title }
+        </h3>
+    </div>
+
+    <ul class="nav nav-pills">
+        <NavLink navLinks={navbarConfig.navLinks} />
+    </ul>
+</header>

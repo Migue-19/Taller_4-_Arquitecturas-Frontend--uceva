@@ -1,0 +1,12 @@
+---
+import Badge from "@components/shared/Badge.astro";
+import MainLayout from "@layouts/MainLayout.astro";
+
+const currentDate = new Date();
+---
+
+<MainLayout>
+    <h1>Fecha Actual del Sistema</h1>
+    <hr>
+    <Badge text={currentDate.toString()} type="primary" />
+</MainLayout>

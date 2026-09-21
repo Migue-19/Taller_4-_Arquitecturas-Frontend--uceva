@@ -1,0 +1,21 @@
+---
+import type { NavLink } from '@interfaces/NavBar';
+
+interface Props {
+    navLinks: NavLink[];
+}
+
+const { navLinks } = Astro.props as Props;
+const { pathname } = Astro.url;
+---
+
+<ul class="nav nav-pills">
+    {navLinks.map((navLink) => (
+        <li class="nav-item">
+            <a  href={navLink.url}
+                class={`nav-link ${pathname === navLink.url ? "active" : ""}`}>
+                {navLink.text}
+            </a>
+        </li>
+    ))}
+</ul>
