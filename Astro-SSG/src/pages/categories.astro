@@ -1,0 +1,44 @@
+---
+import Badge from "@components/shared/Badge.astro";
+import { CATEGORIES } from "@data/Categories";
+import type { BadgeType } from "@interfaces/Badge";
+import type { Category } from "@interfaces/Categories";
+import type { ProductCategory } from "@interfaces/Products";
+import MainLayout from "@layouts/MainLayout.astro";
+
+const categories: Category[] = CATEGORIES;
+
+const categoryMap: Record<ProductCategory, BadgeType> = {
+  'Carnes': 'danger',
+  'Frutas': 'warning',
+  'Lacteos': 'primary',
+  'Verduras': 'success',
+};
+---
+<MainLayout>
+  <table class="table table-striped border">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Categoría</th>
+        <th scope="col">Cantidad de Productos</th>
+        <th scope="col">Distintivo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {categories.map((category) => (
+        <tr>
+          <th scope="row">{category.id}</th>
+          <td>{category.name}</td>
+          <td>{category.count}</td>
+          <td>
+            <Badge
+              text={category.name}
+              type={categoryMap[category.name]}
+            />
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</MainLayout>
