@@ -34,12 +34,14 @@ describe('App', () => {
       },
       navLinks: [
         { text: 'Usuarios', url: '/users' },
+        { text: 'Detalle Usuario', url: '/user-detail' },
         { text: 'Productos', url: '/products' },
         { text: 'Categorías', url: '/categories' },
         { text: 'Fecha', url: '/date' },
       ]
     });
   });
+
 
 
   it('debería renderizar el componente NavbarOrganism', () => {

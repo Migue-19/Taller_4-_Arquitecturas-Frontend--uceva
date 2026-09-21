@@ -3,6 +3,7 @@ import { DatePage } from './pages/date/date.page';
 import { ProductsPage } from './pages/products/products.page';
 import { UsersPage } from './pages/users/users.page';
 import { CategoriesPage } from './pages/categories/categories.page';
+import { UserDetailPage } from './pages/user-detail/user-detail.page';
 
 /**
  * Definición de las rutas principales de la aplicación.
@@ -19,6 +20,7 @@ import { CategoriesPage } from './pages/categories/categories.page';
  * @see {@link UsersPage}
  * @see {@link ProductsPage}
  * @see {@link CategoriesPage}
+ * @see {@link UserDetailPage}
  */
 export const routes: Routes = [
 
@@ -30,6 +32,15 @@ export const routes: Routes = [
    * de mostrar y gestionar el listado de usuarios.
    */
   { path: 'users', component: UsersPage },
+
+  /**
+   * Ruta de detalle de usuario.
+   *
+   * @remarks
+   * Renderiza el componente `UserDetailPage`, encargado
+   * de mostrar la ficha detallada de un usuario.
+   */
+  { path: 'user-detail', component: UserDetailPage },
 
   /**
    * Ruta de productos.
@@ -66,4 +77,5 @@ export const routes: Routes = [
    * automáticamente a la ruta de usuarios.
    */
   { path: '**', redirectTo: 'users' },
-];
+];
+
