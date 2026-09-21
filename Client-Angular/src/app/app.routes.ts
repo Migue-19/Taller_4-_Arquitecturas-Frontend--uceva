@@ -4,6 +4,7 @@ import { ProductsPage } from './pages/products/products.page';
 import { UsersPage } from './pages/users/users.page';
 import { CategoriesPage } from './pages/categories/categories.page';
 import { UserDetailPage } from './pages/user-detail/user-detail.page';
+import { AboutPage } from './pages/about/about.page';
 
 /**
  * Definición de las rutas principales de la aplicación.
@@ -21,6 +22,7 @@ import { UserDetailPage } from './pages/user-detail/user-detail.page';
  * @see {@link ProductsPage}
  * @see {@link CategoriesPage}
  * @see {@link UserDetailPage}
+ * @see {@link AboutPage}
  */
 export const routes: Routes = [
 
@@ -61,6 +63,15 @@ export const routes: Routes = [
   { path: 'categories', component: CategoriesPage },
 
   /**
+   * Ruta de acerca de / estadísticas.
+   *
+   * @remarks
+   * Renderiza el componente `AboutPage`, encargado
+   * de mostrar la información general y contadores del proyecto.
+   */
+  { path: 'about', component: AboutPage },
+
+  /**
    * Ruta de la fecha.
    *
    * @remarks
@@ -78,4 +89,5 @@ export const routes: Routes = [
    */
   { path: '**', redirectTo: 'users' },
 ];
+
 

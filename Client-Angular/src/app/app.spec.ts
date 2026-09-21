@@ -37,10 +37,12 @@ describe('App', () => {
         { text: 'Detalle Usuario', url: '/user-detail' },
         { text: 'Productos', url: '/products' },
         { text: 'Categorías', url: '/categories' },
+        { text: 'Acerca de', url: '/about' },
         { text: 'Fecha', url: '/date' },
       ]
     });
   });
+
 
 
 
