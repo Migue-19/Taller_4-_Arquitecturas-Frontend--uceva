@@ -1,0 +1,16 @@
+---
+import type { BadgeType, BadgeTypeText } from '@interfaces/Badge';
+
+
+interface Props {
+    text: string;
+    type?: BadgeType;
+    typeText?: BadgeTypeText;
+}
+
+const { text, type = 'primary', typeText = 'text-white' } = Astro.props as Props;
+
+---
+<span class={`badge bg-${type} ${typeText}`}>
+  {text}
+</span>
