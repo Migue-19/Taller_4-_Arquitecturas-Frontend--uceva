@@ -1,0 +1,13 @@
+@switch (state) {
+  @case ('loading') {
+    <app-alert alertState="loading" text="Cargando Detalle de Usuario..."></app-alert>
+  }
+
+  @case ('error') {
+    <app-alert alertState="error" text="Error al Cargar el Detalle del Usuario"></app-alert>
+  }
+
+  @case ('success') {
+    <app-user-card [user]="user"></app-user-card>
+  }
+}
